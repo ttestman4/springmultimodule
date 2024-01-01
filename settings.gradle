@@ -1,0 +1,25 @@
+// Include Plugin management
+pluginManagement {
+    plugins {
+        id 'java'
+        id 'org.springframework.boot' version "${springBootVersion}"
+        id 'io.spring.dependency-management' version "${springDependencyManagementVersion}"
+    }
+
+}
+
+// Fail the build on sonar list issues
+
+rootProject.name = 'multimoduleDemo1'
+
+include 'application1'
+include 'library'
+include 'application2'
+include 'application3'
+include 'kafkasample1'
+include 'kafkasample2'
+include 'kafkasample3'
+include 'kafkasample4'
+// include 'kafkasample5'
+include 'kafkasample6'
+include 'kafkastreamssample1'

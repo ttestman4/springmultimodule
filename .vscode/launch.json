@@ -1,0 +1,77 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "kafkastreamssample1",
+            "request": "launch",
+            "mainClass": "com.example.Application",
+            "projectName": "kafkastreamssample1"
+        },
+        {
+            "type": "java",
+            "name": "kafkasample6",
+            "request": "launch",
+            "mainClass": "com.example.Application",
+            "projectName": "kafkasample6"
+        },
+        {
+            "type": "java",
+            "name": "kafkasample4",
+            "request": "launch",
+            "mainClass": "com.example.Application",
+            "projectName": "kafkasample4"
+        },
+        {
+            "type": "java",
+            "name": "kafkasample3",
+            "request": "launch",
+            "mainClass": "com.example.Application",
+            "projectName": "kafkasample3"
+        },
+        {
+            "type": "java",
+            "name": "kafkasample2",
+            "request": "launch",
+            "mainClass": "com.example.Application",
+            "projectName": "kafkasample2"
+        },
+        {
+            "type": "java",
+            "name": "kafkasample1",
+            "request": "launch",
+            "mainClass": "com.example.Application",
+            "projectName": "kafkasample1"
+        },
+        {
+            "type": "java",
+            "name": "application1",
+            "request": "launch",
+            "mainClass": "com.example.multimodule.application.DemoApplication",
+            "projectName": "application1"
+        },
+        {
+            "type": "java",
+            "name": "application2",
+            "request": "launch",
+            "mainClass": "com.example.consumer.application.Application2",
+            "projectName": "application2"
+        },
+        {
+            "type": "java",
+            "name": "application3",
+            "request": "launch",
+            "mainClass": "com.example.producer.application.Application3",
+            "projectName": "application3"
+        }
+    ]
+}
