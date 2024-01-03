@@ -13,7 +13,13 @@ public class AgeBO {
 
     public static Employee ageBusinessLogic(Employee empIn) {
 
-        return empIn.withAge((short) (seed1.incrementAndGet() % 110));
+        short age = (short) (seed1.incrementAndGet() % 110);
+
+        // if( age == 5) {
+        //     throw new RuntimeException("Age processing failed");
+        // }
+
+        return empIn.withAge(age);
     }
 
 }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.common.Employee;
 import com.example.age.AgeBO;
+import com.example.name.NameBO;
 
 import lombok.RequiredArgsConstructor;
 
@@ -35,8 +36,14 @@ public class Controller {
         privateLOGGER.debug("Employee {} generated", what);
     }
 
-    @PostMapping("/employees/age")
+    @PostMapping("/employees/name")
     public Employee postMethodName(@RequestBody Employee empIn) {
+        
+        return NameBO.nameBusinessLogic(empIn);
+    }
+
+    @PostMapping("/employees/age")
+    public Employee postMethodAge(@RequestBody Employee empIn) {
         
         return AgeBO.ageBusinessLogic(empIn);
     }

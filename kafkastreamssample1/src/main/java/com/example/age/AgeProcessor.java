@@ -15,7 +15,6 @@ import com.common.Employee;
 
 import lombok.RequiredArgsConstructor;
 
-
 @RequiredArgsConstructor
 @Configuration
 public class AgeProcessor {
@@ -24,16 +23,20 @@ public class AgeProcessor {
     private final AgeBOFlux ageBOFlux;
 
     @Bean
-    public KStream<?,?> ageProcess(StreamsBuilder builder) {
+    public KStream<?, ?> ageProcess(StreamsBuilder builder) {
         KStream<String, Employee> stream = builder.stream("EmpAgeIn",
                 Consumed.with(Serdes.String(), new JsonSerde<>(Employee.class)));
 
         // stream.mapValues(AgeBO::ageBusinessLogic)
-        //     .to("EmpAddressIn", Produced.with(Serdes.String(), new JsonSerde<>(Employee.class)));
+        // .to("EmpAddressIn", Produced.with(Serdes.String(), new
+        // JsonSerde<>(Employee.class)));
 
-         stream.mapValues(emp -> ageBOFlux.ageBusinessLogic(emp))
-            .to("EmpAddressIn", Produced.with(Serdes.String(), new JsonSerde<>(Employee.class)));
+        // stream.mapValues(emp -> ageBOFlux.ageBusinessLogic(emp))
+        // .to("EmpAddressIn", Produced.with(Serdes.String(), new
+        // JsonSerde<>(Employee.class)));
 
+        stream.mapValues(ageBOFlux::ageBusinessLogic)
+                .to("EmpAddressIn", Produced.with(Serdes.String(), new JsonSerde<>(Employee.class)));
         return stream;
     }
 
