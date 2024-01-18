@@ -15,5 +15,6 @@ public class ApplicationTests {
 }
 
 // Manual Test
-// curl -X POST http://localhost:8091/generate/employee/100
+// curl -X POST http://localhost:8091/generate/employee/1
+// curl -X POST http://localhost:8091/generate/fish/1
 //  curl -X POST localhost:8091/employees/age -H 'Content-type:application/json' -d '{"EmpId": "id1", "FirstName": "FN1"}'

@@ -12,6 +12,83 @@
         },
         {
             "type": "java",
+            "name": "spring-cloud-stream-app1",
+            "request": "launch",
+            "mainClass": "scst.app1.SpringCloudStreamApp1Application",
+            "projectName": "spring-cloud-stream-app1"
+        },
+        {
+            "type": "java",
+            "name": "spring-cloud-stream-app2",
+            "request": "launch",
+            "mainClass": "scst.app2.SpringCloudStreamApp2Application",
+            "projectName": "spring-cloud-stream-app2"
+        },
+        {
+            "type": "java",
+            "name": "spring-cloud-stream-app3",
+            "request": "launch",
+            "mainClass": "scst.app3.SpringCloudStreamApp3Application",
+            "projectName": "spring-cloud-stream-app3"
+        },
+        {
+            "type": "java",
+            "name": "spring-kafka-app0",
+            "request": "launch",
+            "mainClass": "app0.SpringKafkaApp0",
+            "projectName": "spring-kafka-app0"
+        },
+        {
+            "type": "java",
+            "name": "spring-kafka-app1",
+            "request": "launch",
+            "mainClass": "app1.SpringKafkaApp1",
+            "projectName": "spring-kafka-app1"
+        },
+        {
+            "type": "java",
+            "name": "spring-kafka-app2",
+            "request": "launch",
+            "mainClass": "app2.SpringKafkaApp2",
+            "projectName": "spring-kafka-app2"
+        },
+        {
+            "type": "java",
+            "name": "spring-kafka-app4",
+            "request": "launch",
+            "mainClass": "app4.SpringKafkaApp4",
+            "projectName": "spring-kafka-app4"
+        },
+        {
+            "type": "java",
+            "name": "spring-kafka-app5",
+            "request": "launch",
+            "mainClass": "app5.SpringKafkaApp5",
+            "projectName": "spring-kafka-app5"
+        },
+        {
+            "type": "java",
+            "name": "spring-kafka-app6-request",
+            "request": "launch",
+            "mainClass": "app6.request.SpringKafkaApp6Request",
+            "projectName": "spring-kafka-app6"
+        },
+        {
+            "type": "java",
+            "name": "spring-kafka-app6-reply",
+            "request": "launch",
+            "mainClass": "app6.replay.SpringKafkaApp6Reply",
+            "projectName": "spring-kafka-app6"
+        },
+        {
+            "type": "java",
+            "name": "spring-kafka-app7",
+            "request": "launch",
+            "mainClass": "app7.SpringKafkaApp7",
+            "projectName": "spring-kafka-app7"
+        },
+        {
+            "type": "java",
             "name": "kafkastreamssample1",
             "request": "launch",
             "mainClass": "com.example.Application",

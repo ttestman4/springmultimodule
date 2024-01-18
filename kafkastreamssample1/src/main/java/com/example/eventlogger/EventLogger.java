@@ -12,14 +12,15 @@ import org.springframework.kafka.support.KafkaHeaders;
 import com.common.Employee;
 
 @Component
-@KafkaListener(id = "multiGroup", topics = {"EmpNameIn", "EmpAgeIn", "EmpAddressIn" })
+@KafkaListener(id = "multiGroup", topics = { "EmpNameIn", "EmpNameIn.DLT", "EmpAgeIn", "EmpAgeIn.DLT", "EmpAddressIn",
+        "EmpAddressIn.DLT" })
 public class EventLogger {
 
     private static Logger privateLOGGER = LoggerFactory.getLogger(EventLogger.class);
 
     @KafkaHandler
-    public void employeeDeser(Employee payload, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic, 
-    @Header (KafkaHeaders.OFFSET) long offset) {
+    public void employeeDeser(Employee payload, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
+            @Header(KafkaHeaders.OFFSET) long offset) {
         privateLOGGER.info("Received Employee: {}: from {} @ {}:", payload, topic, offset);
     }
 

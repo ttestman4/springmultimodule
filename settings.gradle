@@ -12,6 +12,16 @@ pluginManagement {
 
 rootProject.name = 'multimoduleDemo1'
 
+include 'spring-cloud-stream-app3'
+include 'spring-cloud-stream-app2'
+include 'spring-cloud-stream-app1'
+include 'spring-kafka-app7'
+include 'spring-kafka-app6'
+include 'spring-kafka-app5'
+include 'spring-kafka-app4'
+include 'spring-kafka-app2'
+include 'spring-kafka-app1'
+include 'spring-kafka-app0'
 include 'application1'
 include 'library'
 include 'application2'
