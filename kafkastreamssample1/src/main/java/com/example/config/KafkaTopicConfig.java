@@ -32,7 +32,7 @@ public class KafkaTopicConfig {
 
     @Bean
     public NewTopic empName() {
-        return new NewTopic("EmpNameIn", 1, (short) 1);
+        return new NewTopic("EmpNameIn", 4, (short) 1);
     }
 
     @Bean
@@ -42,7 +42,7 @@ public class KafkaTopicConfig {
 
     @Bean
     public NewTopic empAge() {
-        return new NewTopic("EmpAgeIn", 1, (short) 1);
+        return new NewTopic("EmpAgeIn", 4, (short) 1);
     }
 
     @Bean
@@ -52,7 +52,7 @@ public class KafkaTopicConfig {
 
     @Bean
     public NewTopic empAddress() {
-        return new NewTopic("EmpAddressIn", 1, (short) 1);
+        return new NewTopic("EmpAddressIn", 4, (short) 1);
     }
 
     @Bean

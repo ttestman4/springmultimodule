@@ -18,15 +18,21 @@ public class EventLogger {
 
     private static Logger privateLOGGER = LoggerFactory.getLogger(EventLogger.class);
 
+    // @KafkaHandler
+    // public void employeeDeser(Employee payload, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
+    //         @Header(KafkaHeaders.OFFSET) long offset) {
+    //     privateLOGGER.info("Received Employee: {}: from {} @ {}: partition  ", payload, topic, offset);
+    // }
+
     @KafkaHandler
-    public void employeeDeser(Employee payload, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
-            @Header(KafkaHeaders.OFFSET) long offset) {
-        privateLOGGER.info("Received Employee: {}: from {} @ {}:", payload, topic, offset);
+    public void employeeDeser(ConsumerRecord<Object, Employee> object) {
+        privateLOGGER.info("Received employee: jsonString: {} from {} @ {} : partion {} : raw: {}", object.value(), object.topic(),
+                object.offset(), object.partition(), object);
     }
 
     @KafkaHandler(isDefault = true)
     public void unknown(ConsumerRecord<Object, Object> object) {
-        privateLOGGER.info("Received unknown: jsonString: {} from {} @ {}: raw: {}", object.value(), object.topic(),
-                object.offset(), object);
+        privateLOGGER.info("Received unknown: jsonString: {} from {} @ {} : partion {} : raw: {}", object.value(), object.topic(),
+                object.offset(), object.partition(), object);
     }
 }

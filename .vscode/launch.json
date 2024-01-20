@@ -33,6 +33,13 @@
         },
         {
             "type": "java",
+            "name": "spring-cloud-stream-app5",
+            "request": "launch",
+            "mainClass": "scst.app5.SpringCloudStreamApp5Application",
+            "projectName": "spring-cloud-stream-app5"
+        },
+        {
+            "type": "java",
             "name": "spring-kafka-app0",
             "request": "launch",
             "mainClass": "app0.SpringKafkaApp0",

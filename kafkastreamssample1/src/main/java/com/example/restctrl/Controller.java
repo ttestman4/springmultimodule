@@ -39,6 +39,12 @@ public class Controller {
         privateLOGGER.debug("Employee {} generated", what);
     }
 
+    @PostMapping("/generateOne/employee/{what}")
+    public void sendOneEmployee(@PathVariable int what) {
+        Employee emp = Employee.builder().EmpId("id" + what).build();
+        kafkaTemplate1.send("EmpNameIn", emp.EmpId(), emp);
+    }
+
     @PostMapping("/generate/fish/{what}")
     public void sendFish(@PathVariable int what) {
         for (int i = 0; i < what; i++) {
