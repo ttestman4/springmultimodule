@@ -40,6 +40,13 @@
         },
         {
             "type": "java",
+            "name": "spring-cloud-stream-app11",
+            "request": "launch",
+            "mainClass": "com.example.Application",
+            "projectName": "spring-cloud-stream-app11"
+        },
+        {
+            "type": "java",
             "name": "spring-kafka-app0",
             "request": "launch",
             "mainClass": "app0.SpringKafkaApp0",
