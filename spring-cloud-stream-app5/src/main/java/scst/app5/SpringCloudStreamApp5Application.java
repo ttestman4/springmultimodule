@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.Message;
-import org.springframework.messaging.support.MessageBuilder;
+import org.springframework.integration.support.MessageBuilder;
 
 @SpringBootApplication
 public class SpringCloudStreamApp5Application {
