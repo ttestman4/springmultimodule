@@ -1,7 +1,7 @@
 = Work Items
 :url-repo: https://my-git-repo.com
 
-
+[decimal]
 * [x] Json Supplier
 * [x] Json Consumer
 * [x] Json Processor
