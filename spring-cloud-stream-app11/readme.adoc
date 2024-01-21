@@ -2,15 +2,15 @@
 :url-repo: https://my-git-repo.com
 
 
-[x] Json Supplier
-[x] Json Consumer
-[x] Json Processor
-[x] Rest Api based stream bridge integration
-[ ] DLQ processing
-[ ] Serialization error handler
-[ ] Circuit Breaker Blocking
-[ ] Non Blocking Retry
-[ ] Kafka Schema Registry integration
-[ ] Kafka with ACL 
-[ ] Health & Metric integration
-[ ] Swagger
+* [x] Json Supplier
+* [x] Json Consumer
+* [x] Json Processor
+* [x] Rest Api based stream bridge integration
+* [ ] DLQ processing
+* [ ] Serialization error handler
+* [ ] Circuit Breaker Blocking
+* [ ] Non Blocking Retry
+* [ ] Kafka Schema Registry integration
+* [ ] Kafka with ACL 
+* [ ] Health & Metric integration
+* [ ] Swagger
