@@ -6,6 +6,7 @@
 * [x] Json Consumer
 * [x] Json Processor
 * [x] Rest Api based stream bridge integration
+* [x] Externalise binder name and confition flags for listner to reduce config changes for streams in properties file
 * [ ] DLQ processing
 * [ ] Serialization error handler
 * [ ] Circuit Breaker Blocking
@@ -14,3 +15,4 @@
 * [ ] Kafka with ACL 
 * [ ] Health & Metric integration
 * [ ] Swagger
+* [ ] Spring Boot Admin integration

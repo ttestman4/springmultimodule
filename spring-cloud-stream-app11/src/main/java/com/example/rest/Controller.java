@@ -4,6 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.integration.support.MessageBuilder;
 import org.springframework.kafka.support.KafkaHeaders;
@@ -24,11 +25,14 @@ public class Controller {
 
     private AtomicInteger seed1 = new AtomicInteger(0);
 
+    @Value("${config.binder-name}")
+    private String binderName;
+
     @PostMapping("/generate/employee/{what}")
     public void sendEmployee(@PathVariable int what) {
         for (int i = 0; i < what; i++) {
             Employee emp = Employee.builder().EmpId("id" + seed1.incrementAndGet()).build();
-            streamBridge.send("rest-out-0", MessageBuilder.withPayload(emp)
+            streamBridge.send(binderName, MessageBuilder.withPayload(emp)
                     .setHeader(KafkaHeaders.KEY, emp.EmpId())
                     .build());
         }
@@ -37,8 +41,9 @@ public class Controller {
 
     @PostMapping("/generateOne/employee/{what}")
     public void sendOneEmployee(@PathVariable int what) {
+        privateLOGGER.info("Binder Name: {}", binderName);
         Employee emp = Employee.builder().EmpId("id" + what).build();
-        streamBridge.send("rest-out-0", MessageBuilder.withPayload(emp)
+        streamBridge.send(binderName, MessageBuilder.withPayload(emp)
                     .setHeader(KafkaHeaders.KEY, emp.EmpId())
                     .build());
     }

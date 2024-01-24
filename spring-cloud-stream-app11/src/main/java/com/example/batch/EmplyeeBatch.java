@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.support.KafkaHeaders;
@@ -20,6 +21,7 @@ public class EmplyeeBatch {
     private final AtomicInteger seed1 = new AtomicInteger(0);
 
     @Bean
+    @ConditionalOnProperty("config.enable-batch-feed")
     public Supplier<Message<Employee>> employeeFeed() {
         return () -> {
             Employee emp = Employee.builder().EmpId("id" + seed1.incrementAndGet()).build();
