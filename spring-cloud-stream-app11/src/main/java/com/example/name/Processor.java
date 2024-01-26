@@ -12,6 +12,7 @@ import com.example.common.Employee;
 
 @Configuration
 public class Processor {
+
 	@Bean
 	public Function<Message<Employee>, Message<Employee>> processName() {
 		return (msg) -> {
