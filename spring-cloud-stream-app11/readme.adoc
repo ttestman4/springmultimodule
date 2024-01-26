@@ -7,7 +7,8 @@
 * [x] Json Processor
 * [x] Rest Api based stream bridge integration
 * [x] Externalise binder name and confition flags for listner to reduce config changes for streams in properties file
-* [ ] DLQ processing
+* [x] DLQ processing
+* [x] Blocking Retry with DLQ
 * [ ] Serialization error handler
 * [ ] Circuit Breaker Blocking
 * [ ] Non Blocking Retry

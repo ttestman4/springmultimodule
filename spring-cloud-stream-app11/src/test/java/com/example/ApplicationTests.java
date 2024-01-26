@@ -13,4 +13,6 @@ class ApplicationTests {
 	// Manual Test
 	// curl -X POST http://localhost:8091/generate/employee/1
 	// curl -X POST http://localhost:8091/generateOne/employee/1
+	// curl -X POST http://localhost:8091/generate/fish/1
+	// curl -X POST http://localhost:8091/generateOne/fish/1
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.common.Employee;
+import com.example.common.Fish;
 
 import lombok.RequiredArgsConstructor;
 
@@ -24,6 +25,7 @@ public class Controller {
     private final StreamBridge streamBridge;
 
     private AtomicInteger seed1 = new AtomicInteger(0);
+    private AtomicInteger seed2 = new AtomicInteger(0);
 
     @Value("${config.binder-name}")
     private String binderName;
@@ -41,10 +43,30 @@ public class Controller {
 
     @PostMapping("/generateOne/employee/{what}")
     public void sendOneEmployee(@PathVariable int what) {
-        privateLOGGER.info("Binder Name: {}", binderName);
+        privateLOGGER.debug("Binder Name: {}", binderName);
         Employee emp = Employee.builder().EmpId("id" + what).build();
         streamBridge.send(binderName, MessageBuilder.withPayload(emp)
                     .setHeader(KafkaHeaders.KEY, emp.EmpId())
+                    .build());
+    }
+
+    @PostMapping("/generate/fish/{what}")
+    public void sendFish(@PathVariable int what) {
+        for (int i = 0; i < what; i++) {
+            Fish fish = Fish.builder().EmpId(1).FishId("id" + seed2.incrementAndGet()).build();
+            streamBridge.send(binderName, MessageBuilder.withPayload(fish)
+                    .setHeader(KafkaHeaders.KEY, fish.FishId())
+                    .build());
+        }
+        privateLOGGER.debug("Fish {} generated", what);
+    }
+
+    @PostMapping("/generateOne/fish/{what}")
+    public void sendOneFish(@PathVariable int what) {
+        privateLOGGER.debug("Binder Name: {}", binderName);
+        Fish fish = Fish.builder().EmpId(1).FishId("id" + what).build();
+        streamBridge.send(binderName, MessageBuilder.withPayload(fish)
+                    .setHeader(KafkaHeaders.KEY, fish.FishId())
                     .build());
     }
 }

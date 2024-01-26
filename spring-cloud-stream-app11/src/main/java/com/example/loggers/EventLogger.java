@@ -20,11 +20,10 @@ public class EventLogger {
     @ConditionalOnProperty("config.enable-employee-listner")
     Consumer<Message<Employee>> eventListener() {
         return msg -> {
-            privateLOGGER.info("Topic: {}:  Partition: {}:  Received Key: {}: Key: {}: Payload: {}:  ",
+            privateLOGGER.info("Topic: {}:  Partition: {}:  Received Key: {}: Payload: {}:  ",
                     msg.getHeaders().get(KafkaHeaders.RECEIVED_TOPIC),
                     msg.getHeaders().get(KafkaHeaders.RECEIVED_PARTITION),
                     msg.getHeaders().get(KafkaHeaders.RECEIVED_KEY),
-                    msg.getHeaders().get(KafkaHeaders.KEY),
                     msg.getPayload());
         };
     }

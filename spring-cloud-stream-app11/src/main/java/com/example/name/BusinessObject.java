@@ -20,7 +20,7 @@ public class BusinessObject {
     public static Employee nameBusinessLogic(Employee empIn) {
         int seedValue = seed.incrementAndGet();
         if (enableException && "id5".equals(empIn.EmpId())) {
-            privateLOGGER.debug("Employee exception generated: {}", seedValue);
+            privateLOGGER.info("Employee exception generated: {}", seedValue);
             throw new RuntimeException("Name Processing Exception");
         }
 
