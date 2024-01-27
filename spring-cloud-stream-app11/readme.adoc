@@ -9,11 +9,13 @@
 * [x] Externalise binder name and confition flags for listner to reduce config changes for streams in properties file
 * [x] DLQ processing
 * [x] Blocking Retry with DLQ
+* [x] Partion all topics and adjust concurrency for efficient consumption
+* [ ] Configure concurrency at global level
 * [ ] Serialization error handler
 * [ ] Circuit Breaker Blocking
 * [ ] Non Blocking Retry
 * [ ] Kafka Schema Registry integration
 * [ ] Kafka with ACL 
-* [ ] Health & Metric integration
+* [x] Health & Metric integration
 * [ ] Swagger
 * [ ] Spring Boot Admin integration

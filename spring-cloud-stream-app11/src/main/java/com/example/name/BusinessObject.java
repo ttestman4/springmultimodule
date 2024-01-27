@@ -14,16 +14,16 @@ public class BusinessObject {
     private static AtomicInteger seed = new AtomicInteger(0);
 
     // TBD Use @Value
-    private static boolean enableException = true;
+    private static boolean enableException = false;
 
 
     public static Employee nameBusinessLogic(Employee empIn) {
-        int seedValue = seed.incrementAndGet();
-        if (enableException && "id5".equals(empIn.EmpId())) {
-            privateLOGGER.info("Employee exception generated: {}", seedValue);
+        if (enableException && "0".equals(empIn.EmpId())) {
+            privateLOGGER.info("Employee exception generated: {}", empIn.EmpId());
             throw new RuntimeException("Name Processing Exception");
         }
 
+        int seedValue = seed.incrementAndGet();
         return empIn.withFirstName("FirstName" + seedValue)
                 .withLastName("LastName" + seedValue);
     }
