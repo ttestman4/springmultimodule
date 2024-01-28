@@ -19,3 +19,5 @@
 * [x] Health & Metric integration
 * [ ] Swagger
 * [ ] Spring Boot Admin integration
+* [ ] Eureka Service discovery integration
+* [ ] Switch SBA to Eureka consumption
