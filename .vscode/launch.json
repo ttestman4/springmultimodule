@@ -47,6 +47,13 @@
         },
         {
             "type": "java",
+            "name": "spring-cloud-stream-app11-rest",
+            "request": "launch",
+            "mainClass": "com.example.Application",
+            "projectName": "spring-cloud-stream-app11-rest"
+        },
+        {
+            "type": "java",
             "name": "spring-boot-admin",
             "request": "launch",
             "mainClass": "com.example.Application",

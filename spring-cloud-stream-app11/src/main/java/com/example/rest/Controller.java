@@ -42,9 +42,9 @@ public class Controller {
     }
 
     @PostMapping("/generateOne/employee/{what}")
-    public void sendOneEmployee(@PathVariable int what) {
+    public void sendOneEmployee(@PathVariable String what) {
         privateLOGGER.debug("Binder Name: {}", binderName);
-        Employee emp = Employee.builder().EmpId("id" + what).build();
+        Employee emp = Employee.builder().EmpId(what).build();
         streamBridge.send(binderName, MessageBuilder.withPayload(emp)
                     .setHeader(KafkaHeaders.KEY, emp.EmpId())
                     .build());

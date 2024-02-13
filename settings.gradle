@@ -15,6 +15,7 @@ rootProject.name = 'multimoduleDemo1'
 
 include 'spring-boot-admin'
 include 'spring-cloud-stream-app11'
+include 'spring-cloud-stream-app11-rest'
 include 'spring-cloud-stream-app5'
 include 'spring-cloud-stream-app3'
 include 'spring-cloud-stream-app2'
