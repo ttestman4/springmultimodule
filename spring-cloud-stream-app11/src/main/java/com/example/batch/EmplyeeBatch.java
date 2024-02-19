@@ -18,12 +18,14 @@ public class EmplyeeBatch {
     private static Logger privateLOGGER = LoggerFactory.getLogger(EmplyeeBatch.class);
 
     private final AtomicInteger seed = new AtomicInteger(0);
+    private static final boolean enableTwoKeyMode = false;
 
     @Bean
     public Supplier<Message<Employee>> employeeFeed() {
         return () -> {
             int seedVal = seed.incrementAndGet();
-            Employee emp = Employee.builder().EmpId(String.valueOf(seedVal % 2)).build();
+            int empId = enableTwoKeyMode ? seedVal % 2 : seedVal;
+            Employee emp = Employee.builder().EmpId( String.valueOf(empId)).build();
             privateLOGGER.debug("Employee {} generated", emp);
             return MessageBuilder.withPayload(emp)
                     .setHeader(KafkaHeaders.KEY, emp.EmpId())
