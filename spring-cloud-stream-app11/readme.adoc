@@ -13,7 +13,8 @@
 * [ ] Configure concurrency at global level
 * [ ] Serialization error handler
 * [ ] Circuit Breaker Blocking
-* [ ] Non Blocking Retry
+* [x] Non Blocking Retry
+* [ ] External Config server integration
 * [ ] Kafka Schema Registry integration
 * [ ] Kafka with ACL 
 * [x] Health & Metric integration
