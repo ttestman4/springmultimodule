@@ -14,6 +14,7 @@ pluginManagement {
 rootProject.name = 'multimoduleDemo1'
 
 include 'spring-boot-admin'
+include 'spring-cloud-config'
 include 'spring-cloud-stream-app11'
 include 'spring-cloud-stream-app11-rest'
 include 'spring-cloud-stream-app5'

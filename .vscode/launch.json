@@ -61,6 +61,13 @@
         },
         {
             "type": "java",
+            "name": "spring-boot-config",
+            "request": "launch",
+            "mainClass": "com.example.Application",
+            "projectName": "spring-boot-config"
+        },
+        {
+            "type": "java",
             "name": "spring-kafka-app0",
             "request": "launch",
             "mainClass": "app0.SpringKafkaApp0",
