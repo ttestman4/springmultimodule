@@ -61,10 +61,10 @@
         },
         {
             "type": "java",
-            "name": "spring-boot-config",
+            "name": "spring-cloud-config",
             "request": "launch",
             "mainClass": "com.example.Application",
-            "projectName": "spring-boot-config"
+            "projectName": "spring-cloud-config"
         },
         {
             "type": "java",
