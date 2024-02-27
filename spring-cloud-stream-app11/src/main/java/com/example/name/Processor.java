@@ -2,6 +2,8 @@ package com.example.name;
 
 import java.util.function.Function;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.cloud.client.circuitbreaker.ReactiveCircuitBreakerFactory;
@@ -20,6 +22,8 @@ import reactor.core.publisher.Mono;
 
 @Configuration
 public class Processor {
+	private static Logger privateLOGGER = LoggerFactory.getLogger(Processor.class);
+
 	private final RestTemplate rest;
 	private final WebClient client;
 	private final ReactiveCircuitBreakerFactory cbFactoryReactive;
@@ -40,6 +44,15 @@ public class Processor {
 	@Bean
 	public Function<Message<Employee>, Message<Employee>> processName() {
 		return (msg) -> {
+			privateLOGGER.info("Payload: {} : Partition: {}: Received Key: {}: Key: {}: Raw: {}:",
+                msg.getPayload(),
+                msg.getHeaders().get(KafkaHeaders.RECEIVED_PARTITION),
+                msg.getHeaders().get(KafkaHeaders.RECEIVED_KEY),
+                msg.getHeaders().get(KafkaHeaders.KEY),
+                msg);
+			privateLOGGER.info("Key: {} :Retry Attempt: {}:",
+					msg.getHeaders().get(KafkaHeaders.RECEIVED_KEY),
+					msg.getHeaders().get(KafkaHeaders.DELIVERY_ATTEMPT));
 			Employee emp = BusinessObject.nameBusinessLogic(msg.getPayload());
 			return MessageBuilder.withPayload(emp)
 					// Propagate the partion key

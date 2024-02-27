@@ -14,7 +14,7 @@ public class BusinessObject {
     private static AtomicInteger seed = new AtomicInteger(0);
 
     // TBD Use @Value
-    private static boolean enableException = false;
+    private static boolean enableException = true;
 
 
     public static Employee nameBusinessLogic(Employee empIn) {
