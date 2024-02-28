@@ -15,4 +15,6 @@ public class ApplicationTests {
 }
 
 // Manual Test
-// curl -X POST http://localhost:8086/send/fail; curl -X POST http://localhost:8086/send/good
+// curl -X POST http://localhost:8086/send/fail 
+// curl -X POST http://localhost:8086/send/good
+// curl -X POST http://localhost:8086/send/list3fail
